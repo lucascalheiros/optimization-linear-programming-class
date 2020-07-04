@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CplexClassProblems" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/CplexClassProblems" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DIL_STD" />
+					<Add directory="/opt/ibm/ILOG/CPLEX_Studio129/concert/include" />
+					<Add directory="/opt/ibm/ILOG/CPLEX_Studio129/cplex/include" />
+				</Compiler>
+				<Linker>
+					<Add library="ilocplex" />
+					<Add library="cplex" />
+					<Add library="concert" />
+					<Add library="m" />
+					<Add library="pthread" />
+					<Add library="dl" />
+					<Add directory="/opt/ibm/ILOG/CPLEX_Studio129/concert/lib/x86-64_linux/static_pic" />
+					<Add directory="/opt/ibm/ILOG/CPLEX_Studio129/cplex/lib/x86-64_linux/static_pic" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/CplexClassProblems" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="clique_maxima.cpp" />
+		<Unit filename="cobertura.cpp" />
+		<Unit filename="dieta.cpp" />
+		<Unit filename="escalonamento.cpp" />
+		<Unit filename="facilidades.cpp" />
+		<Unit filename="fluxo_maximo.cpp" />
+		<Unit filename="frequencia.cpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="mochila.cpp" />
+		<Unit filename="padroes.cpp" />
+		<Unit filename="plantio.cpp" />
+		<Unit filename="racao.cpp" />
+		<Unit filename="tintas.cpp" />
+		<Unit filename="transporte.cpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
