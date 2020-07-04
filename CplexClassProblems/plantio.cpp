@@ -44,7 +44,7 @@ void plantioSolver() {
         }
 
 		for (int i = 0; i < numFarms*numPlantations; i++) {
-			farmWater[i/numFarms] += plantationWaterCost[i] * x[i];
+			farmWater[i/numFarms] += plantationWaterCost[i%numPlantations] * x[i];
 			farmArea[i/numFarms] += x[i];
 			plantationArea[i%numPlantations] += x[i];
         }
