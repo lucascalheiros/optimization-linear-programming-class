@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 void racaoSolver() {
     IloEnv env;
     try {

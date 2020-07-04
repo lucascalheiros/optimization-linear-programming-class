@@ -309,3 +309,43 @@
 1593878099 /home/lucas/Projetos/CplexProblems/CplexProblems/dieta.hpp
 	<ilcplex/ilocplex.h>
 
+1593814981 source:/home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/clique_maxima.cpp
+
+1593814909 source:/home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/cobertura.cpp
+
+1593814882 source:/home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/escalonamento.cpp
+
+1593814953 source:/home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/facilidades.cpp
+
+1593814862 source:/home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/fluxo_maximo.cpp
+
+1593814964 source:/home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/frequencia.cpp
+
+1593814922 source:/home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/mochila.cpp
+
+1593814936 source:/home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/padroes.cpp
+
+1593814829 source:/home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/tintas.cpp
+
+1593814840 source:/home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/transporte.cpp
+
+1593879441 source:/home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/dieta.cpp
+	"dieta.hpp"
+
+1593878099 /home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/dieta.hpp
+	<ilcplex/ilocplex.h>
+
+1593895230 source:/home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/main.cpp
+	"racao.hpp"
+	"dieta.hpp"
+	"plantio.hpp"
+
+1593817339 /home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/racao.hpp
+	<ilcplex/ilocplex.h>
+
+1593880141 /home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/plantio.hpp
+	<ilcplex/ilocplex.h>
+
+1593893022 source:/home/lucas/Projetos/otimizacao-programacao-linear/CplexClassProblems/racao.cpp
+	"racao.hpp"
+
