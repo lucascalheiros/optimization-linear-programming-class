@@ -14,8 +14,8 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add option="-DIL_STD" />
-					<Add directory="/opt/ibm/ILOG/CPLEX_Studio129/concert/include" />
-					<Add directory="/opt/ibm/ILOG/CPLEX_Studio129/cplex/include" />
+					<Add directory="/home/leandro/Documentos/cplex/concert/include" />
+					<Add directory="/home/leandro/Documentos/cplex/cplex/include" />
 				</Compiler>
 				<Linker>
 					<Add library="ilocplex" />
@@ -24,8 +24,8 @@
 					<Add library="m" />
 					<Add library="pthread" />
 					<Add library="dl" />
-					<Add directory="/opt/ibm/ILOG/CPLEX_Studio129/concert/lib/x86-64_linux/static_pic" />
-					<Add directory="/opt/ibm/ILOG/CPLEX_Studio129/cplex/lib/x86-64_linux/static_pic" />
+					<Add directory="/home/leandro/Documentos/cplex/concert/lib/x86-64_linux/static_pic" />
+					<Add directory="/home/leandro/Documentos/cplex/cplex/lib/x86-64_linux/static_pic" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -44,6 +44,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="/home/leandro/Documentos/cplex/concert" />
+			<Add directory="/home/leandro/Documentos/cplex/cplex" />
 		</Compiler>
 		<Unit filename="clique_maxima.cpp" />
 		<Unit filename="cobertura.cpp" />
@@ -59,6 +61,10 @@
 		<Unit filename="racao.cpp" />
 		<Unit filename="tintas.cpp" />
 		<Unit filename="transporte.cpp" />
-		<Extensions />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
