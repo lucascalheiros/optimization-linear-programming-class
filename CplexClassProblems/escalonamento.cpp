@@ -12,7 +12,7 @@ void escalonamentoSolver() {
 
         IloCplex cplex(escalonamento);
 
-        IloNumVarArray x(env, numVar, 0, IloInfinity);
+        IloIntVarArray x(env, numVar, 0, IloInfinity);
 
         IloExpr hired(env);
 
@@ -58,4 +58,3 @@ void escalonamentoSolver() {
 	env.end();
 	return;
 }
-

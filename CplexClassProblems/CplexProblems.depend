@@ -673,3 +673,67 @@
 1594168354 source:/home/leandro/Documentos/otimization-linear-programming-class/CplexClassProblems/transporte.cpp
 	"transporte.hpp"
 
+1594254117 source:/home/leandro/Documentos/otimization-linear-programming-class/CplexClassProblems/escalonamento.cpp
+	"escalonamento.hpp"
+
+1594169283 /home/leandro/Documentos/otimization-linear-programming-class/CplexClassProblems/escalonamento.hpp
+	<ilcplex/ilocplex.h>
+
+1594168354 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/clique_maxima.cpp
+
+1594168354 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/cobertura.cpp
+
+1594168354 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/dieta.cpp
+	"dieta.hpp"
+
+1594168354 /home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/dieta.hpp
+	<ilcplex/ilocplex.h>
+
+1594256250 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/escalonamento.cpp
+	"escalonamento.hpp"
+
+1594169283 /home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/escalonamento.hpp
+	<ilcplex/ilocplex.h>
+
+1594168354 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/facilidades.cpp
+
+1594168354 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/fluxo_maximo.cpp
+
+1594168354 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/frequencia.cpp
+
+1594255172 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/main.cpp
+	"racao.hpp"
+	"dieta.hpp"
+	"plantio.hpp"
+	"tintas.hpp"
+	"transporte.hpp"
+	"escalonamento.hpp"
+
+1594168354 /home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/racao.hpp
+	<ilcplex/ilocplex.h>
+
+1594168354 /home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/plantio.hpp
+	<ilcplex/ilocplex.h>
+
+1594168354 /home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/tintas.hpp
+	<ilcplex/ilocplex.h>
+
+1594168354 /home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/transporte.hpp
+	<ilcplex/ilocplex.h>
+
+1594168354 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/mochila.cpp
+
+1594168354 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/padroes.cpp
+
+1594168354 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/plantio.cpp
+	"plantio.hpp"
+
+1594168354 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/racao.cpp
+	"racao.hpp"
+
+1594168354 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/tintas.cpp
+	"tintas.hpp"
+
+1594168354 source:/home/leandro/Documentos/Mestrado/otimization-linear-programming-class/CplexClassProblems/transporte.cpp
+	"transporte.hpp"
+

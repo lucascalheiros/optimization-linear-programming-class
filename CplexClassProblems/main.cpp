@@ -3,6 +3,7 @@
 #include "plantio.hpp"
 #include "tintas.hpp"
 #include "transporte.hpp"
+#include "escalonamento.hpp"
 
 using namespace std;
 
@@ -13,5 +14,6 @@ int main()
 	plantioSolver();
 	tintasSolver();
 	transporteSolver();
+	escalonamentoSolver();
 	return 0;
 }
