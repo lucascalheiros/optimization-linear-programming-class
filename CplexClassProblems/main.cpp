@@ -7,6 +7,7 @@
 #include "fluxo_maximo.hpp"
 #include "cobertura.hpp"
 #include "mochila.hpp"
+#include "padroes.hpp"
 
 using namespace std;
 
@@ -21,5 +22,6 @@ int main()
 	fluxoSolver();
 	coberturaSolver();
 	mochilaSolver();
+	padroesSolver();
 	return 0;
 }
