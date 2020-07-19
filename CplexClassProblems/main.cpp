@@ -4,6 +4,7 @@
 #include "tintas.hpp"
 #include "transporte.hpp"
 #include "escalonamento.hpp"
+#include "fluxo_maximo.hpp"
 
 using namespace std;
 
@@ -15,5 +16,6 @@ int main()
 	tintasSolver();
 	transporteSolver();
 	escalonamentoSolver();
+	fluxoSolver();
 	return 0;
 }
