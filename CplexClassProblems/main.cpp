@@ -5,6 +5,7 @@
 #include "transporte.hpp"
 #include "escalonamento.hpp"
 #include "fluxo_maximo.hpp"
+#include "cobertura.hpp"
 
 using namespace std;
 
@@ -17,5 +18,6 @@ int main()
 	transporteSolver();
 	escalonamentoSolver();
 	fluxoSolver();
+	coberturaSolver();
 	return 0;
 }
