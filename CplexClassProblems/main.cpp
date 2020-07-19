@@ -6,6 +6,7 @@
 #include "escalonamento.hpp"
 #include "fluxo_maximo.hpp"
 #include "cobertura.hpp"
+#include "mochila.hpp"
 
 using namespace std;
 
@@ -19,5 +20,6 @@ int main()
 	escalonamentoSolver();
 	fluxoSolver();
 	coberturaSolver();
+	mochilaSolver();
 	return 0;
 }

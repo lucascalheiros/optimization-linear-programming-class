@@ -25,7 +25,7 @@ void coberturaSolver() {
 
         IloCplex cplex(cobertura);
 
-		IloNumVarArray x(env, cityNum, 0, 1);
+		IloIntVarArray x(env, cityNum, 0, 1);
 		IloExprArray schoolExpr(env, cityNum);
 		IloExpr totalSchool(env);
 
