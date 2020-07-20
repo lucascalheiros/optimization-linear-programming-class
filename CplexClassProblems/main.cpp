@@ -8,6 +8,9 @@
 #include "cobertura.hpp"
 #include "mochila.hpp"
 #include "padroes.hpp"
+#include "facilidades.hpp"
+#include "frequencia.hpp"
+#include "clique_maxima.hpp"
 
 using namespace std;
 
@@ -23,5 +26,8 @@ int main()
 	coberturaSolver();
 	mochilaSolver();
 	padroesSolver();
+	facilidadesSolver();
+	frequenciaSolver();
+	cliqueSolver();
 	return 0;
 }
