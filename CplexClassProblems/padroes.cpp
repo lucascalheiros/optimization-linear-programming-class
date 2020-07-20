@@ -17,10 +17,11 @@ void padroesSolver() {
         int plate1Qtd = 200;
         int plate2Qtd = 90;
         int timeLimit = 400;
-        int plates[4][3] = {{1, 7, 2},
+        int plates[4][3] = {{1, 7, 2}, // Corpo|Tampa|Tempo
                             {0, 9, 2},
                             {4, 4, 1},
-                            {2, 3, 3}};
+                            {2, 3, 3} // Faz parte da placa de tipo 2
+                            };
 
         IloModel padroes(env, "Problema dos Padroes");
 
@@ -36,7 +37,7 @@ void padroesSolver() {
         IloIntExpr plate1(env);
         IloIntExpr plate2(env);
 
-
+        // Separa os tipos de placas do array
         for (int i = 0; i < 3; ++i) {
             plate1 += x[i];
         }
@@ -48,14 +49,20 @@ void padroesSolver() {
             time += x[i]*plates[i][2];
         }
 
+        // Restringe a variavel das latas ao limite, ou do numero de corpos, ou do numero de tampas
         padroes.add(y <= body);
         padroes.add(y <= head/2);
-        profit += y*canProfit - (body - y)*costBody - (head - y*2)*costHead;
 
-        padroes.add(IloMaximize(env, profit));
+        // Restrição de tempo
         padroes.add(time <= timeLimit);
+
+        // Restrição de placas
         padroes.add(plate1 <= plate1Qtd);
         padroes.add(plate2 <= plate2Qtd);
+
+        profit += y * canProfit - (body - y) * costBody - (head - y * 2) * costHead;
+
+        padroes.add(IloMaximize(env, profit));
 
         if (cplex.solve())
             cout << "Lucro máximo " << cplex.getObjValue() << endl;

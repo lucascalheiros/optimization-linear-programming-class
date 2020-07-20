@@ -23,21 +23,20 @@ void facilidadesSolver() {
 
         IloCplex cplex(facilidades);
 
-		IntVarMatrix x(env, numWarehouse);
-		IloIntVarArray y(env, numWarehouse, 0, 1);
+        IntVarMatrix x(env, numWarehouse);
+        IloIntVarArray y(env, numWarehouse, 0, 1);
         IloIntExpr cost(env);
         IloIntExprArray clientCheck(env, numClients);
-        IloIntExprArray warehouseCheck(env, numWarehouse);
 
         for (int i = 0; i < numWarehouse; ++i) {
             x[i] = IloIntVarArray(env, numClients, 0, 1);
-            warehouseCheck[i] = IloIntExpr(env);
         }
 
         for (int j = 0; j < numClients; ++j) {
             clientCheck[j] = IloIntExpr(env);
         }
 
+        // Expressão para função de custo
         for (int i = 0; i < numWarehouse; ++i) {
             cost += costInstall[i] * y[i];
             for (int j = 0; j < numClients; ++j) {
@@ -45,18 +44,21 @@ void facilidadesSolver() {
             }
         }
 
-       for (int i = 0; i < numWarehouse; ++i) {
+        // Cria a expressão para verificar o atendimento dos clientes
+        for (int i = 0; i < numWarehouse; ++i) {
             for (int j = 0; j < numClients; ++j) {
                 clientCheck[j] += x[i][j];
             }
         }
 
+        // Restrição: se ao menos um cliente é atendido em um deposito então e necessário que o deposito seja instalado
         for (int i = 0; i < numWarehouse; ++i) {
             for (int j = 0; j < numClients; ++j) {
                 facilidades.add(y[i] >= x[i][j]);
             }
         }
 
+        // Restrição de atendimento dos clientes
         for (int j = 0; j < numClients; ++j) {
             facilidades.add(clientCheck[j] == 1);
         }

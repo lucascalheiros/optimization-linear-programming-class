@@ -11,7 +11,7 @@ void cliqueSolver() {
     IloEnv env;
     try {
         int graphDim = 8;
-        int graphAdj[8][8] = {   {0, 1, 1, 1, 0, 0, 0, 0},
+        int graphAdj[8][8] = {  {0, 1, 1, 1, 0, 0, 0, 0},
                                 {1, 0, 1, 1, 0, 0, 0, 0},
                                 {1, 1, 0, 1, 1, 1, 0, 0},
                                 {1, 1, 1, 0, 1, 0, 1, 0},
@@ -25,8 +25,13 @@ void cliqueSolver() {
 
         IloCplex cplex(clique);
 
+        // Array de vertices na clique
 		IloIntVarArray x(env, graphDim, 0, 1);
+
+		// Arestas para cada vertice
 		IloIntExprArray edgeNode(env, graphDim);
+
+		// Contador de vertices
 		IloIntExpr totalClique(env);
 
         for (int i = 0; i < graphDim; ++i) {
@@ -37,8 +42,8 @@ void cliqueSolver() {
         for (int i = 0; i < graphDim; i++) {
             for (int j = i; j < graphDim; j++) {
                 if (graphAdj[i][j] == 1) {
-                    edgeNode[i] += x[j]*x[i]*graphAdj[i][j];
-                    edgeNode[j] += x[j]*x[i]*graphAdj[i][j];
+                    edgeNode[i] += x[j] * x[i] * graphAdj[i][j];
+                    edgeNode[j] += x[j] * x[i] * graphAdj[i][j];
                 }
             }
         }
@@ -48,10 +53,12 @@ void cliqueSolver() {
            totalClique += x[i];
         }
 
-        // Se o nó pertence a clique então seu numero de arrestas deve ser o total da clique -1
+        // Se o vertice pertence a clique então seu numero de arrestas deve ser o total da clique -1
         for (int i = 0; i < graphDim; i++) {
-            clique.add(edgeNode[i] >= x[i]*(totalClique-1));
+            clique.add(edgeNode[i] >= x[i] * (totalClique - 1));
         }
+
+        // Maximiza a quantidade de vertices na clique
         clique.add(IloMaximize(env, totalClique));
 
 
@@ -62,7 +69,7 @@ void cliqueSolver() {
         cplex.getValues(sol, x);
 
 		for (int i = 0; i < graphDim; i++) {
-            cout << "Vertice " << i+1 << ": " << sol[i] << endl;
+            cout << "Vertice " << i + 1 << ": " << sol[i] << endl;
 
 		}
     }
