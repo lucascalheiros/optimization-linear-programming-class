@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CplexListProblems" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/CplexListProblems" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DIL_STD" />
+					<Add directory="/opt/cplex/concert/include" />
+					<Add directory="/opt/cplex/cplex/include" />
+				</Compiler>
+				<Linker>
+					<Add library="ilocplex" />
+					<Add library="cplex" />
+					<Add library="concert" />
+					<Add library="m" />
+					<Add library="pthread" />
+					<Add library="dl" />
+					<Add directory="/opt/cplex/concert/lib/x86-64_linux/static_pic" />
+					<Add directory="/opt/cplex/cplex/lib/x86-64_linux/static_pic" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/CplexListProblems" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="/opt/cplex/concert" />
+			<Add directory="/opt/cplex/cplex" />
+		</Compiler>
+		<Unit filename="coloracao.cpp" />
+		<Unit filename="coloracao.hpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="steiner.cpp" />
+		<Unit filename="steiner.hpp" />
+		<Unit filename="topKclique.cpp" />
+		<Unit filename="topKclique.hpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
