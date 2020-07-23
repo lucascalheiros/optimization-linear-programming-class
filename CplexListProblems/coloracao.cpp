@@ -59,13 +59,9 @@ void coloracaoSolver() {
         IloNumArray sol(env, numEdges);
         cplex.getValues(sol, x);
 
-        int sum = 0;
-        // Verifica a frequência ordenada máxima
         for (int i = 0; i < numEdges; ++i) {
-            sum += sol[i];
             cout << "Aresta: "<< i + 1 << " Cor: " << sol[i] << endl;
 		}
-		cout << "Soma de Cores " << sum << endl;
     }
 	catch (const IloException& e)
 	{
