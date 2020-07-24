@@ -11,21 +11,24 @@ void steinerSolver() {
     IloEnv env;
     try {
         int numNodes = 7;
-        int numEdges = 10;
+        int numEdges = 12;
         int l = 1;
-        int r = 0;
+        int r = 1;
         int numTerminal = 3;
         int terminalNodes[3] = {1, 4, 7};
-        int edges[10][3] = { {1, 2, 10},
+        int edges[12][3] = { {1, 2, 10},
                             {1, 3, 1},
                             {2, 3, 1},
                             {2, 4, 10},
                             {3, 4, 12},
-                            {2, 5, 1},
+                            {4, 5, 1},
                             {2, 6, 1},
                             {3, 6, 1},
                             {5, 3, 1},
-                            {7, 5, 3}
+                            {7, 2, 3},
+                            {5, 7, 1},
+                            {5, 6, 1}
+
                             };
 
         IloModel steiner(env, "Problema de Steiner");
@@ -38,8 +41,11 @@ void steinerSolver() {
 		IloExprArray nodeSteiner(env, numNodes);
 
 		IloIntExprArray nodeSteinerNeighbor(env, numNodes);
+        IloIntExpr nodeNeighbor2(env);
+        IloIntExpr nodeNeighbor3p(env);
 
         IloIntExpr pathSum(env);
+
 
         for (int i = 0; i < numNodes; ++i) {
             nodeSteinerNeighbor[i] = IloIntExpr(env);
@@ -64,6 +70,12 @@ void steinerSolver() {
         }
 
         // Falta restrição para limitar o numero de vizinhos dos vertices steiner
+        for (int i = 0; i < numNodes; ++i) {
+            nodeNeighbor2 += nodeSteinerNeighbor[i] == 2;
+            nodeNeighbor3p += nodeSteinerNeighbor[i] > 3;
+        }
+        steiner.add(nodeNeighbor2 <= l);
+        steiner.add(nodeNeighbor3p <= r);
 
         // Restrição de 1 vizinho steiner por terminal
         for (int i = 0; i < numTerminal; ++i) {
