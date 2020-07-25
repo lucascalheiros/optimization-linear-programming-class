@@ -6,37 +6,38 @@ using namespace std;
 void racaoSolver() {
     IloEnv env;
     try {
-        int numVar = 2;
-        int meatLimit = 10000;
-        int grainLimit = 30000;
-        int meat[2] = {1,4};
-        int grain[2] = {5,2};
-        int profit[2] = {11, 12};
-        string typeName[2] = {"Ração AMGS", "Ração RE"};
+        int numVar     = 2;
+        int meatLimit  = 10000; //carne disponível em quilos
+        int grainLimit = 30000; //cereal disponível em quilos
+
+        int meat[numVar]   = {1, 4};   //carne necessária para fabricação de "Ração AMGS" e "Ração RE"
+        int grain[numVar]  = {5, 2};   //cereal necessário para fabricação de "Ração AMGS" e "Ração RE"
+        int profit[numVar] = {20, 30}; //preço de unidade de "Ração AMGS" e "Ração RE"
+
+        string typeName[numVar] = {"Ração AMGS", "Ração RE"};
 
         IloModel racao(env, "Problema da Ração");
 
         IloCplex cplex(racao);
 
-		IloNumVarArray x(env, numVar, 0, IloInfinity);
+		IloIntVarArray x(env, numVar, 0, IloInfinity);
 
-        IloExpr profitSum(env);
+        IloExpr profitSum(env); //função objetivo
 
 		for (int i = 0; i < numVar; i++)
 			profitSum += profit[i] * x[i];
 
-		racao.add(IloMaximize(env, profitSum));
-
+		racao.add(IloMaximize(env, profitSum)); //maximizando lucro
         IloExpr qtdMeat(env);
         IloExpr qtdGrain(env);
 
 		for (int i = 0; i < numVar; i++) {
-			qtdMeat += meat[i] * x[i];
+			qtdMeat  += meat[i] * x[i];
 			qtdGrain += grain[i] * x[i];
         }
 
-		racao.add(qtdGrain <= grainLimit);
-		racao.add(qtdMeat <= meatLimit);
+		racao.add(qtdGrain <= grainLimit); //quantidade de cereal utilziada no deve exceder a disponível
+		racao.add(qtdMeat <= meatLimit);   //quantidade de carne utilziada no deve exceder a disponível
 
         if (cplex.solve())
             cout << "Lucro ótimo " << cplex.getObjValue() << endl;
@@ -46,8 +47,6 @@ void racaoSolver() {
 
 		for (int i = 0; i < numVar; i++)
 			cout << typeName[i] << ": " << sol[i] << endl;
-
-
     }
 	catch (const IloException& e)
 	{

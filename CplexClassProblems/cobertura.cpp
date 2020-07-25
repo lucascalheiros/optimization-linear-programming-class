@@ -3,23 +3,22 @@
 typedef IloArray<IloNumVarArray> NumVarMatrix;
 typedef IloArray<IloExprArray> ExprMatrix;
 
-
 using namespace std;
-
 
 void coberturaSolver() {
     IloEnv env;
     try {
         int cityNum = 8;
-        int cityAdj[8][8] = {   {1, 1, 1, 0, 0, 0, 0, 0},
-                                {1, 1, 1, 1, 0, 0, 0, 0},
-                                {1, 1, 1, 0, 1, 1, 0, 0},
-                                {0, 1, 0, 1, 1, 0, 1, 0},
-                                {0, 0, 1, 1, 1, 0, 1, 0},
-                                {0, 0, 1, 0, 0, 1, 0, 1},
-                                {0, 0, 0, 1, 1, 0, 1, 1},
-                                {0, 0, 0, 0, 0, 1, 1, 1}
-                                };
+
+        //cidades adjacentes
+        int cityAdj[cityNum][cityNum] = {{1, 1, 1, 0, 0, 0, 0, 0},
+                                         {1, 1, 1, 1, 0, 0, 0, 0},
+                                         {1, 1, 1, 0, 1, 1, 0, 0},
+                                         {0, 1, 0, 1, 1, 0, 1, 0},
+                                         {0, 0, 1, 1, 1, 0, 1, 0},
+                                         {0, 0, 1, 0, 0, 1, 0, 1},
+                                         {0, 0, 0, 1, 1, 0, 1, 1},
+                                         {0, 0, 0, 0, 0, 1, 1, 1}};
 
         IloModel cobertura(env, "Problema da Cobertura");
 
@@ -46,10 +45,10 @@ void coberturaSolver() {
         }
 
         for (int i = 0; i < cityNum; i++) {
-            cobertura.add(schoolExpr[i] >= 1);
+            cobertura.add(schoolExpr[i] >= 1); //pelo menos uma escola deve ser construída na vizinhança de uma cidade
         }
 
-        cobertura.add(IloMinimize(env, totalSchool));
+        cobertura.add(IloMinimize(env, totalSchool)); //minimizando número de escolas construídas
 
 
         if (cplex.solve())
