@@ -14,7 +14,7 @@ main.o: main.cpp
 dieta.o: dieta.cpp
 	g++ -c -o ./compiled/dieta.o dieta.cpp $(CPLEXFLAGS) $(CFLAGS)
 
-racao.o: dieta.cpp
+racao.o: racao.cpp
 	g++ -c -o ./compiled/racao.o racao.cpp $(CPLEXFLAGS) $(CFLAGS)
 
 clean:
