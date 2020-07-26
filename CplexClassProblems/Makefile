@@ -3,16 +3,16 @@ CPLEXFLAGS=-O3 -m64 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -I/Users/macministan
 CFLAGS=-std=c++11 -static-libstdc++ -Wall
 
 all:main.o dieta.o
-	g++ -o main.run main.o dieta.o $(CPLEXFLAGS) $(CFLAGS)
+	g++ -o ./release/main.run ./compiled/main.o ./compiled/dieta.o $(CPLEXFLAGS) $(CFLAGS)
 
 %.o: %.cpp %.hpp
 	g++ -c $< -o $@ $(CFLAGS)
 
 main.o: main.cpp
-	g++ -c -o main.o main.cpp $(CPLEXFLAGS) $(CFLAGS)
+	g++ -c -o ./compiled/main.o main.cpp $(CPLEXFLAGS) $(CFLAGS)
 
 dieta.o: dieta.cpp
-	g++ -c -o dieta.o dieta.cpp $(CPLEXFLAGS) $(CFLAGS)
+	g++ -c -o ./compiled/dieta.o dieta.cpp $(CPLEXFLAGS) $(CFLAGS)
 
 clean:
 	rm -f *.o

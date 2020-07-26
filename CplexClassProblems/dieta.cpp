@@ -9,9 +9,9 @@ void dietaSolver() {
         int vitALimitMin = 9;  //quantidade mínima de vitamina A necessária no composto
         int vitCLimitMin = 19; //quantidade mínima de vitamina C necessária no composto
 
-        int vitA[numVar] = {1, 0, 2, 2, 1, 2};       //quantidade de cada ingrediente na vitamina A
-        int vitC[numVar] = {0, 1, 3, 1, 3, 2};       //quantidade de cada ingrediente na vitamina C
-        int cost[numVar] = {35, 30, 60, 50, 27, 22}; //custo de cada ingrediente
+        int vitA[6] = {1, 0, 2, 2, 1, 2};       //quantidade de cada ingrediente na vitamina A
+        int vitC[6] = {0, 1, 3, 1, 3, 2};       //quantidade de cada ingrediente na vitamina C
+        int cost[6] = {35, 30, 60, 50, 27, 22}; //custo de cada ingrediente
 
         IloModel dieta(env, "Problema da Dieta");
 
