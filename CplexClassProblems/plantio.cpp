@@ -7,12 +7,12 @@ void plantioSolver() {
     int numFarms       = 3;
     int numPlantations = 3;
 
-    int farmAreaMaxLimit[numFarms]  = {400, 650, 350};   //área disponíevel para plantio em cada fazenda
-    int farmWaterMaxLimit[numFarms] = {1800, 2200, 950}; //água disponíevel em cada fazenda
+    int farmAreaMaxLimit[3]  = {400, 650, 350};   //área disponíevel para plantio em cada fazenda
+    int farmWaterMaxLimit[3] = {1800, 2200, 950}; //água disponíevel em cada fazenda
 
-    int plantationMaxLimit[numPlantations]    = {660, 880, 400};    //área máxima para plantio de milho, arroz e feijao
-    float plantationWaterCost[numPlantations] = {5.5, 4, 3.5};      //água utilziada nas plantações de milho, arroz e feijao
-    int plantationProfit[numPlantations]      = {5000, 4000, 1800}; //lucro por área de milho, arroz e feijao
+    int plantationMaxLimit[3]    = {660, 880, 400};    //área máxima para plantio de milho, arroz e feijao
+    float plantationWaterCost[3] = {5.5, 4, 3.5};      //água utilziada nas plantações de milho, arroz e feijao
+    int plantationProfit[3]      = {5000, 4000, 1800}; //lucro por área de milho, arroz e feijao
 
     IloEnv env;
     try {
