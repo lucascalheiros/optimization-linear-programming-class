@@ -15,4 +15,4 @@ dieta.o: dieta.cpp
 	g++ -c -o ./compiled/dieta.o dieta.cpp $(CPLEXFLAGS) $(CFLAGS)
 
 clean:
-	rm -f *.o
+	rm -f ./compiled/*.o ./release/*.run
