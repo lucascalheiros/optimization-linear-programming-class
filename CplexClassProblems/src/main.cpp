@@ -35,5 +35,8 @@ int main()
 
     cout << "\nESCALONAMENTO PROBLEM ------\n\n";
     escalonamentoSolver();
+
+    cout << "\nFACILIDADES PROBLEM ------\n\n";
+    facilidadesSolver();
 	return 0;
 }

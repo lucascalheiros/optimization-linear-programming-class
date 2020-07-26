@@ -2,8 +2,8 @@ CPLEXFLAGS=-O3 -m64 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -I/Users/macministan
 
 CFLAGS=-std=c++11 -static-libstdc++ -Wall
 
-all:main.o dieta.o racao.o plantio.o tintas.o transporte.o clique_maxima.o cobertura.o escalonamento.o
-	g++ -o ./release/main.run ./compiled/main.o ./compiled/dieta.o ./compiled/racao.o ./compiled/plantio.o ./compiled/tintas.o ./compiled/transporte.o ./compiled/clique_maxima.o ./compiled/cobertura.o ./compiled/escalonamento.o $(CPLEXFLAGS) $(CFLAGS)
+all:main.o dieta.o racao.o plantio.o tintas.o transporte.o clique_maxima.o cobertura.o escalonamento.o facilidades.o
+	g++ -o ./release/main.run ./compiled/main.o ./compiled/dieta.o ./compiled/racao.o ./compiled/plantio.o ./compiled/tintas.o ./compiled/transporte.o ./compiled/clique_maxima.o ./compiled/cobertura.o ./compiled/escalonamento.o ./compiled/facilidades.o $(CPLEXFLAGS) $(CFLAGS)
 
 %.o: %.cpp %.hpp
 	g++ -c $< -o $@ $(CFLAGS)
@@ -34,6 +34,9 @@ cobertura.o: ./src/cobertura.cpp
 
 escalonamento.o: ./src/escalonamento.cpp
 	g++ -c -o ./compiled/escalonamento.o ./src/escalonamento.cpp $(CPLEXFLAGS) $(CFLAGS)
+
+facilidades.o: ./src/facilidades.cpp
+	g++ -c -o ./compiled/facilidades.o ./src/facilidades.cpp $(CPLEXFLAGS) $(CFLAGS)
 
 clean:
 	rm -f ./compiled/*.o ./release/*.run
