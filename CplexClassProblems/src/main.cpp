@@ -6,6 +6,7 @@
 #include "../headers/transporte.hpp"
 #include "../headers/clique_maxima.hpp"
 #include "../headers/cobertura.hpp"
+#include "../headers/escalonamento.hpp"
 
 using namespace std;
 
@@ -31,5 +32,8 @@ int main()
 
     cout << "\nCOBERTURA PROBLEM ------\n\n";
     coberturaSolver();
+
+    cout << "\nESCALONAMENTO PROBLEM ------\n\n";
+    escalonamentoSolver();
 	return 0;
 }
