@@ -3,6 +3,7 @@
 #include "racao.hpp"
 #include "plantio.hpp"
 #include "tintas.hpp"
+#include "transporte.hpp"
 
 using namespace std;
 
@@ -19,5 +20,8 @@ int main()
     
     cout << "\nTINTAS PROBLEM ------\n\n";
 	tintasSolver();
+
+    cout << "\nTRANSPORTE PROBLEM ------\n\n";
+	transporteSolver();
 	return 0;
 }
