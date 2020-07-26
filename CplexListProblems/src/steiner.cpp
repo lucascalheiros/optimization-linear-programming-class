@@ -10,13 +10,16 @@ using namespace std;
 void steinerSolver() {
     IloEnv env;
     try {
-        int numNodes = 7;
-        int numEdges = 12;
-        int l = 1;
-        int r = 1;
-        int numTerminal = 3;
-        int terminalNodes[3] = {1, 4, 7};
-        int edges[12][3] = { {1, 2, 10},
+        int numNodes = 7;  // Quantidade de vértices
+        int numEdges = 12; // Quantidade de arestas
+        int l        = 1;  // l definido no problema
+        int r        = 1;  // r definido no problema
+
+        int numTerminal      = 3;         // Quantidade de vértices terminais  
+        int terminalNodes[3] = {1, 4, 7}; // Conjunto dos vértices terminais
+
+        // Arestas ij com custo c
+        int edges[12][3] = {{1, 2, 10},
                             {1, 3, 1},
                             {2, 3, 1},
                             {2, 4, 10},
@@ -27,9 +30,7 @@ void steinerSolver() {
                             {5, 3, 1},
                             {7, 2, 3},
                             {5, 7, 1},
-                            {5, 6, 1}
-
-                            };
+                            {5, 6, 1}};
 
         IloModel steiner(env, "Problema de Steiner");
 
@@ -85,6 +86,7 @@ void steinerSolver() {
         // Condição para arvore
         steiner.add(IloSum(x) + 1 == IloSum(nodeSteiner));
 
+        // Minimizando custo
         steiner.add(IloMinimize(env, pathSum));
 
         if (cplex.solve())

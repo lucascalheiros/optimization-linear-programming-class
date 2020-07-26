@@ -10,17 +10,16 @@ using namespace std;
 void coloracaoSolver() {
     IloEnv env;
     try {
-        int numNodes = 6;
-        int numEdges = 8;
-        int edges[8][2] = { {1, 2},
-                            {1, 3},
-                            {2, 3},
-                            {2, 4},
-                            {2, 6},
-                            {3, 5},
-                            {3, 6},
-                            {4, 5}
-                            };
+        int numNodes    = 6;       // Quantidade de vértices
+        int numEdges    = 8;       // Quantidade de arestas
+        int edges[8][2] = {{1, 2}, // Qresta entre cada par de vértices
+                           {1, 3},
+                           {2, 3},
+                           {2, 4},
+                           {2, 6},
+                           {3, 5},
+                           {3, 6},
+                           {4, 5}};
 
         IloModel coloracao(env, "Problema de Coloração de arestas");
 
@@ -35,7 +34,7 @@ void coloracaoSolver() {
             colorSum += x[i];
         }
 
-        // Restrição de mesma cor, se as arestas forem vizinhas
+        // Arestas vizinhas não podem ter a mesma cor
         for (int i = 0; i < numEdges; ++i) {
             for (int j = 0; j < numEdges; ++j) {
                 if (i != j) {
@@ -50,7 +49,7 @@ void coloracaoSolver() {
             }
         }
 
-        // Minimiza a soma das cores
+        // Minimizando o número de cores utilizadas
         coloracao.add(IloMinimize(env, colorSum));
 
         if (cplex.solve())

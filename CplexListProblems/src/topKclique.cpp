@@ -10,9 +10,11 @@ using namespace std;
 void topKcliqueSolver() {
     IloEnv env;
     try {
-        int numEdges = 13;
-        int numNodes = 10;
-        int k = 3;
+        int numEdges = 13; // Quantidade de vértices
+        int numNodes = 10; // Quantidade de arestas
+        int k        = 3;  // Quantidade de cliques
+
+        // Arestas ij
         int edges[13][2] = {{1, 2},
                             {1, 3},
                             {1, 4},
@@ -25,8 +27,7 @@ void topKcliqueSolver() {
                             {6, 7},
                             {6, 8},
                             {8, 9},
-                            {9, 10}
-                            };
+                            {9, 10}};
 
         IloModel clique(env, "Problem Top K Clique");
 
@@ -46,9 +47,10 @@ void topKcliqueSolver() {
 
 		// Inicialização
         for (int i = 0; i < k; ++i) {
-            x[i] = IloIntVarArray(env, numNodes, 0, 1);
-            totalKClique[i] = IloIntExpr(env);
+            x[i]                      = IloIntVarArray(env, numNodes, 0, 1);
+            totalKClique[i]       = IloIntExpr(env);
             nodeCliqueNeighbor[i] = IloIntExprArray(env, numNodes);
+
             for (int j = 0; j < numNodes; ++j) {
                 nodeCliqueNeighbor[i][j] = IloIntExpr(env);
             }
@@ -112,13 +114,13 @@ void topKcliqueSolver() {
         for (int i = 0; i < k; ++i) {
             sol[i] = IloNumArray(env, numNodes);
             cplex.getValues(sol[i], x[i]);
-             cout << "Clique " << i + 1 << ": {";
+            
+            cout << "Clique " << i + 1 << ": {";
             for (int j = 0; j < numNodes; j++) {
                 if (sol[i][j] == 1)
                     cout << " "  << j + 1;
             }
               cout  << " } " << endl;
-
         }
 
     }
