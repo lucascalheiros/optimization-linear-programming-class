@@ -8,6 +8,8 @@
 #include "../headers/cobertura.hpp"
 #include "../headers/escalonamento.hpp"
 #include "../headers/facilidades.hpp"
+#include "../headers/fluxo_maximo.hpp"
+#include "../headers/frequencia.hpp"
 
 using namespace std;
 
@@ -39,5 +41,11 @@ int main()
 
     cout << "\nFACILIDADES PROBLEM ------\n\n";
     facilidadesSolver();
+
+    cout << "\nFLUXO MAXIMO PROBLEM ------\n\n";
+    fluxoSolver();
+
+    cout << "\nFREQUENCIA PROBLEM ------\n\n";
+    frequenciaSolver();
 	return 0;
 }
