@@ -1,4 +1,4 @@
-#include "frequencia.hpp"
+#include "headers/frequencia.hpp"
 
 typedef IloArray<IloIntVarArray> IntVarMatrix;
 typedef IloArray<IloExprArray> ExprMatrix;

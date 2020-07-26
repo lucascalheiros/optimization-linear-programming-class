@@ -1,4 +1,4 @@
-#include "clique_maxima.hpp"
+#include "headers/clique_maxima.hpp"
 
 typedef IloArray<IloNumVarArray> NumVarMatrix;
 typedef IloArray<IloExprArray> ExprMatrix;

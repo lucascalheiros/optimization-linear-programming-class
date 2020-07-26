@@ -1,4 +1,4 @@
-#include "tintas.hpp"
+#include "headers/tintas.hpp"
 
 #define SEC 0
 #define COR 1

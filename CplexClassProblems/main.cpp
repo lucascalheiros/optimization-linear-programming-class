@@ -1,9 +1,9 @@
 #include <iostream>
-#include "dieta.hpp"
-#include "racao.hpp"
-#include "plantio.hpp"
-#include "tintas.hpp"
-#include "transporte.hpp"
+#include "headers/dieta.hpp"
+#include "headers/racao.hpp"
+#include "headers/plantio.hpp"
+#include "headers/tintas.hpp"
+#include "headers/transporte.hpp"
 
 using namespace std;
 

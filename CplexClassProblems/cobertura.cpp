@@ -1,4 +1,4 @@
-#include "cobertura.hpp"
+#include "headers/cobertura.hpp"
 
 typedef IloArray<IloNumVarArray> NumVarMatrix;
 typedef IloArray<IloExprArray> ExprMatrix;

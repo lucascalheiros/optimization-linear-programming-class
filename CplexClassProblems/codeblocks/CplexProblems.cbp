@@ -47,20 +47,20 @@
 			<Add directory="/home/leandro/Documentos/cplex/concert" />
 			<Add directory="/home/leandro/Documentos/cplex/cplex" />
 		</Compiler>
-		<Unit filename="clique_maxima.cpp" />
-		<Unit filename="cobertura.cpp" />
-		<Unit filename="dieta.cpp" />
-		<Unit filename="escalonamento.cpp" />
-		<Unit filename="facilidades.cpp" />
-		<Unit filename="fluxo_maximo.cpp" />
-		<Unit filename="frequencia.cpp" />
-		<Unit filename="main.cpp" />
-		<Unit filename="mochila.cpp" />
-		<Unit filename="padroes.cpp" />
-		<Unit filename="plantio.cpp" />
-		<Unit filename="racao.cpp" />
-		<Unit filename="tintas.cpp" />
-		<Unit filename="transporte.cpp" />
+		<Unit filename="../clique_maxima.cpp" />
+		<Unit filename="../cobertura.cpp" />
+		<Unit filename="../dieta.cpp" />
+		<Unit filename="../escalonamento.cpp" />
+		<Unit filename="../facilidades.cpp" />
+		<Unit filename="../fluxo_maximo.cpp" />
+		<Unit filename="../frequencia.cpp" />
+		<Unit filename="../main.cpp" />
+		<Unit filename="../mochila.cpp" />
+		<Unit filename="../padroes.cpp" />
+		<Unit filename="../plantio.cpp" />
+		<Unit filename="../racao.cpp" />
+		<Unit filename="../tintas.cpp" />
+		<Unit filename="../transporte.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
