@@ -11,6 +11,7 @@
 #include "../headers/fluxo_maximo.hpp"
 #include "../headers/frequencia.hpp"
 #include "../headers/mochila.hpp"
+#include "../headers/padroes.hpp"
 
 using namespace std;
 
@@ -51,5 +52,8 @@ int main()
 
     cout << "\nMOCHILA PROBLEM ------\n\n";
     mochilaSolver();
+
+    cout << "\nPADRÕES PROBLEM ------\n\n";
+    padroesSolver();
 	return 0;
 }
