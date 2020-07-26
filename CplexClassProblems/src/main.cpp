@@ -10,6 +10,7 @@
 #include "../headers/facilidades.hpp"
 #include "../headers/fluxo_maximo.hpp"
 #include "../headers/frequencia.hpp"
+#include "../headers/mochila.hpp"
 
 using namespace std;
 
@@ -47,5 +48,8 @@ int main()
 
     cout << "\nFREQUENCIA PROBLEM ------\n\n";
     frequenciaSolver();
+
+    cout << "\nMOCHILA PROBLEM ------\n\n";
+    mochilaSolver();
 	return 0;
 }

@@ -2,8 +2,8 @@ CPLEXFLAGS=-O3 -m64 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -I/Users/macministan
 
 CFLAGS=-std=c++11 -static-libstdc++ -Wall
 
-all:main.o dieta.o racao.o plantio.o tintas.o transporte.o clique_maxima.o cobertura.o escalonamento.o facilidades.o fluxo_maximo.o frequencia.o
-	g++ -o ./release/main.run ./compiled/main.o ./compiled/dieta.o ./compiled/racao.o ./compiled/plantio.o ./compiled/tintas.o ./compiled/transporte.o ./compiled/clique_maxima.o ./compiled/cobertura.o ./compiled/escalonamento.o ./compiled/facilidades.o ./compiled/fluxo_maximo.o ./compiled/frequencia.o $(CPLEXFLAGS) $(CFLAGS)
+all:main.o dieta.o racao.o plantio.o tintas.o transporte.o clique_maxima.o cobertura.o escalonamento.o facilidades.o fluxo_maximo.o frequencia.o mochila.o
+	g++ -o ./release/main.run ./compiled/main.o ./compiled/dieta.o ./compiled/racao.o ./compiled/plantio.o ./compiled/tintas.o ./compiled/transporte.o ./compiled/clique_maxima.o ./compiled/cobertura.o ./compiled/escalonamento.o ./compiled/facilidades.o ./compiled/fluxo_maximo.o ./compiled/frequencia.o ./compiled/mochila.o $(CPLEXFLAGS) $(CFLAGS)
 
 %.o: %.cpp %.hpp
 	g++ -c $< -o $@ $(CFLAGS)
@@ -43,6 +43,9 @@ fluxo_maximo.o: ./src/fluxo_maximo.cpp
 
 frequencia.o: ./src/frequencia.cpp
 	g++ -c -o ./compiled/frequencia.o ./src/frequencia.cpp $(CPLEXFLAGS) $(CFLAGS)
+
+mochila.o: ./src/mochila.cpp
+	g++ -c -o ./compiled/mochila.o ./src/mochila.cpp $(CPLEXFLAGS) $(CFLAGS)
 
 clean:
 	rm -f ./compiled/*.o ./release/*.run
