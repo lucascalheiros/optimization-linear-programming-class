@@ -7,6 +7,7 @@
 #include "../headers/clique_maxima.hpp"
 #include "../headers/cobertura.hpp"
 #include "../headers/escalonamento.hpp"
+#include "../headers/facilidades.hpp"
 
 using namespace std;
 
