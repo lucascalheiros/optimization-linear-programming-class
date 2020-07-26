@@ -2,29 +2,32 @@ CPLEXFLAGS=-O3 -m64 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -I/Users/macministan
 
 CFLAGS=-std=c++11 -static-libstdc++ -Wall
 
-all:main.o dieta.o racao.o plantio.o tintas.o transporte.o
-	g++ -o ./release/main.run ./compiled/main.o ./compiled/dieta.o ./compiled/racao.o ./compiled/plantio.o ./compiled/tintas.o ./compiled/transporte.o $(CPLEXFLAGS) $(CFLAGS)
+all:main.o dieta.o racao.o plantio.o tintas.o transporte.o clique_maxima.o
+	g++ -o ./release/main.run ./compiled/main.o ./compiled/dieta.o ./compiled/racao.o ./compiled/plantio.o ./compiled/tintas.o ./compiled/transporte.o ./compiled/clique_maxima.o $(CPLEXFLAGS) $(CFLAGS)
 
 %.o: %.cpp %.hpp
 	g++ -c $< -o $@ $(CFLAGS)
 
-main.o: main.cpp
-	g++ -c -o ./compiled/main.o main.cpp $(CPLEXFLAGS) $(CFLAGS)
+main.o: ./src/main.cpp
+	g++ -c -o ./compiled/main.o ./src/main.cpp $(CPLEXFLAGS) $(CFLAGS)
 
-dieta.o: dieta.cpp
-	g++ -c -o ./compiled/dieta.o dieta.cpp $(CPLEXFLAGS) $(CFLAGS)
+dieta.o: ./src/dieta.cpp
+	g++ -c -o ./compiled/dieta.o ./src/dieta.cpp $(CPLEXFLAGS) $(CFLAGS)
 
-racao.o: racao.cpp
-	g++ -c -o ./compiled/racao.o racao.cpp $(CPLEXFLAGS) $(CFLAGS)
+racao.o: ./src/racao.cpp
+	g++ -c -o ./compiled/racao.o ./src/racao.cpp $(CPLEXFLAGS) $(CFLAGS)
 
-plantio.o: plantio.cpp
-	g++ -c -o ./compiled/plantio.o plantio.cpp $(CPLEXFLAGS) $(CFLAGS)
+plantio.o: ./src/plantio.cpp
+	g++ -c -o ./compiled/plantio.o ./src/plantio.cpp $(CPLEXFLAGS) $(CFLAGS)
 
-tintas.o: tintas.cpp
-	g++ -c -o ./compiled/tintas.o tintas.cpp $(CPLEXFLAGS) $(CFLAGS)
+tintas.o: ./src/tintas.cpp
+	g++ -c -o ./compiled/tintas.o ./src/tintas.cpp $(CPLEXFLAGS) $(CFLAGS)
 
-transporte.o: transporte.cpp
-	g++ -c -o ./compiled/transporte.o transporte.cpp $(CPLEXFLAGS) $(CFLAGS)
+transporte.o: ./src/transporte.cpp
+	g++ -c -o ./compiled/transporte.o ./src/transporte.cpp $(CPLEXFLAGS) $(CFLAGS)
+
+clique_maxima.o: ./src/clique_maxima.cpp
+	g++ -c -o ./compiled/clique_maxima.o ./src/clique_maxima.cpp $(CPLEXFLAGS) $(CFLAGS)
 
 clean:
 	rm -f ./compiled/*.o ./release/*.run
