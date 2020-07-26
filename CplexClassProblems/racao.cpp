@@ -12,7 +12,7 @@ void racaoSolver() {
 
         int meat[2]   = {1, 4};   //carne necessária para fabricação de "Ração AMGS" e "Ração RE"
         int grain[2]  = {5, 2};   //cereal necessário para fabricação de "Ração AMGS" e "Ração RE"
-        int profit[2] = {20, 30}; //preço de unidade de "Ração AMGS" e "Ração RE"
+        int profit[2] = {11, 12}; //lucro de unidade de "Ração AMGS" e "Ração RE"
 
         string typeName[2] = {"Ração AMGS", "Ração RE"};
 
@@ -20,7 +20,7 @@ void racaoSolver() {
 
         IloCplex cplex(racao);
 
-		IloIntVarArray x(env, numVar, 0, IloInfinity);
+	IloNumVarArray x(env, numVar, 0, IloInfinity);
 
         IloExpr profitSum(env); //função objetivo
 
