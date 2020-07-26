@@ -23,7 +23,7 @@ void tintasSolver() {
 
         float cost[4] = {1.5, 1, 4, 6}; //custo por litro de SolA, solB, SEC e COR
 
-        string varName[numVar] = {"SRsolA", "SRsolB", "SRcompSec", "SRcompCor", "SNsolA", "SNsolB", "SNcompSec", "SNcompCor"};
+        string varName[8] = {"SRsolA", "SRsolB", "SRcompSec", "SRcompCor", "SNsolA", "SNsolB", "SNcompSec", "SNcompCor"};
 
 
         IloModel tintas(env, "Problema das Tintas");
