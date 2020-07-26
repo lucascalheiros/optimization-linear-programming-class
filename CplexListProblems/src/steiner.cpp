@@ -1,4 +1,4 @@
-#include "steiner.hpp"
+#include "../headers/steiner.hpp"
 
 typedef IloArray<IloIntVarArray> IntVarMatrix;
 typedef IloArray<IloExprArray> ExprMatrix;

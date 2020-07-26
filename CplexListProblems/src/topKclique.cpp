@@ -1,4 +1,4 @@
-#include "topKclique.hpp"
+#include "../headers/topKclique.hpp"
 
 typedef IloArray<IloIntVarArray> IntVarMatrix;
 typedef IloArray<IloIntExprArray> IntExprMatrix;

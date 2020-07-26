@@ -1,4 +1,4 @@
-#include "coloracao.hpp"
+#include "../headers/coloracao.hpp"
 
 typedef IloArray<IloIntVarArray> IntVarMatrix;
 typedef IloArray<IloExprArray> ExprMatrix;

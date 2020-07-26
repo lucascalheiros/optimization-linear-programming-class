@@ -1,6 +1,6 @@
-#include "coloracao.hpp"
-#include "topKclique.hpp"
-#include "steiner.hpp"
+#include "../headers/coloracao.hpp"
+#include "../headers/topKclique.hpp"
+#include "../headers/steiner.hpp"
 
 
 using namespace std;

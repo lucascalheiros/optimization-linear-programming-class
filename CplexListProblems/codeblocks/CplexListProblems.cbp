@@ -47,13 +47,13 @@
 			<Add directory="/opt/cplex/concert" />
 			<Add directory="/opt/cplex/cplex" />
 		</Compiler>
-		<Unit filename="coloracao.cpp" />
-		<Unit filename="coloracao.hpp" />
-		<Unit filename="main.cpp" />
-		<Unit filename="steiner.cpp" />
-		<Unit filename="steiner.hpp" />
-		<Unit filename="topKclique.cpp" />
-		<Unit filename="topKclique.hpp" />
+		<Unit filename="../src/coloracao.cpp" />
+		<Unit filename="../src/coloracao.hpp" />
+		<Unit filename="../src/main.cpp" />
+		<Unit filename="../src/steiner.cpp" />
+		<Unit filename="../src/steiner.hpp" />
+		<Unit filename="../src/topKclique.cpp" />
+		<Unit filename="../src/topKclique.hpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
