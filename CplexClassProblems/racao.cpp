@@ -10,11 +10,11 @@ void racaoSolver() {
         int meatLimit  = 10000; //carne disponível em quilos
         int grainLimit = 30000; //cereal disponível em quilos
 
-        int meat[numVar]   = {1, 4};   //carne necessária para fabricação de "Ração AMGS" e "Ração RE"
-        int grain[numVar]  = {5, 2};   //cereal necessário para fabricação de "Ração AMGS" e "Ração RE"
-        int profit[numVar] = {20, 30}; //preço de unidade de "Ração AMGS" e "Ração RE"
+        int meat[2]   = {1, 4};   //carne necessária para fabricação de "Ração AMGS" e "Ração RE"
+        int grain[2]  = {5, 2};   //cereal necessário para fabricação de "Ração AMGS" e "Ração RE"
+        int profit[2] = {20, 30}; //preço de unidade de "Ração AMGS" e "Ração RE"
 
-        string typeName[numVar] = {"Ração AMGS", "Ração RE"};
+        string typeName[2] = {"Ração AMGS", "Ração RE"};
 
         IloModel racao(env, "Problema da Ração");
 
